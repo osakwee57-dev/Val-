@@ -1,18 +1,22 @@
-
 import React, { useMemo } from 'react';
 import { Heart } from 'lucide-react';
 
-const FloatingHearts: React.FC = () => {
+interface FloatingHeartsProps {
+  density?: number;
+}
+
+const FloatingHearts: React.FC<FloatingHeartsProps> = ({ density = 30 }) => {
   const hearts = useMemo(() => {
-    return Array.from({ length: 30 }).map((_, i) => ({
+    return Array.from({ length: density }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
-      delay: `${Math.random() * 15}s`,
-      duration: `${12 + Math.random() * 20}s`,
-      size: `${12 + Math.random() * 35}px`,
+      delay: `${Math.random() * 20}s`,
+      duration: `${15 + Math.random() * 25}s`,
+      size: `${10 + Math.random() * 40}px`,
       opacity: 0.1 + Math.random() * 0.4,
+      rotation: `${Math.random() * 360}deg`,
     }));
-  }, []);
+  }, [density]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
@@ -29,8 +33,12 @@ const FloatingHearts: React.FC = () => {
           }}
         >
           <Heart 
-            className="text-red-400 fill-red-300" 
-            style={{ width: h.size, height: h.size }}
+            className="text-red-300 fill-red-200" 
+            style={{ 
+              width: h.size, 
+              height: h.size, 
+              transform: `rotate(${h.rotation})` 
+            }}
           />
         </div>
       ))}

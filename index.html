@@ -1,44 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Valentine's Proposal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600..700&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        cursive: ['"Dancing Script"', 'cursive'],
-                        sans: ['Quicksand', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'float 20s linear infinite',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              cursive: ['"Dancing Script"', 'cursive'],
+              sans: ['Quicksand', 'sans-serif'],
+            },
+          },
+        },
+      }
     </script>
-    <style>
-        @keyframes float {
-          0% { transform: translateY(0) rotate(0deg); }
-          100% { transform: translateY(-110vh) rotate(360deg); }
-        }
-        body {
-            font-family: 'Quicksand', sans-serif;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-        .animate-float {
-            animation: float linear infinite;
-        }
-    </style>
 <script type="importmap">
 {
   "imports": {
